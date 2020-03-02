@@ -1,0 +1,25 @@
+server:
+  port: 8080
+file:
+  upload:
+    folder: /Users/yangxiong/temp/
+    maxSize: 5
+spring:
+  output:
+    ansi:
+      enabled: detect
+  datasource:
+    url: jdbc:mysql://localhost:3306/rest-server?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: chris111
+    type: com.alibaba.druid.pool.DruidDataSource
+mybatis-plus:
+  mapper-locations: classpath*:mapping/*.xml
+  global-config:
+    db-config:
+      id-type: auto
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+logging:
+  config: classpath:logback-spring.xml
